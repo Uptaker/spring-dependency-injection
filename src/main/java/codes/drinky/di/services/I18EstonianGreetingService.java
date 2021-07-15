@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile("EST")
+@Profile({"EST", "default"})
 @Service("i18nService")
 public class I18EstonianGreetingService implements GreetingService {
     @Override
