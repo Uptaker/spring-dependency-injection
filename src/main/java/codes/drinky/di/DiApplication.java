@@ -15,11 +15,11 @@ public class DiApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(DiApplication.class, args);
 
+		System.out.println("--------- primary bean ---------");
+
 		MyController myController = (MyController) context.getBean("myController");
 
-		String greeting = myController.sayHello();
-
-		System.out.println(greeting);
+		System.out.println(myController.sayHello());
 
 		System.out.println("--------- property ---------");
 

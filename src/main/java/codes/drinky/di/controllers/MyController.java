@@ -1,13 +1,20 @@
 package codes.drinky.di.controllers;
 
+import codes.drinky.di.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
 
-    public String sayHello() {
-        System.out.println("Hello!");
+    private final GreetingService greetingService;
 
-        return "Agh!";
+    @Autowired
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public String sayHello() {
+        return greetingService.sayGreeting();
     }
 }
