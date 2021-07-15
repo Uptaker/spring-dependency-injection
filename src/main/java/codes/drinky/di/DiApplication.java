@@ -1,9 +1,6 @@
 package codes.drinky.di;
 
-import codes.drinky.di.controllers.ConstructorInjectedController;
-import codes.drinky.di.controllers.MyController;
-import codes.drinky.di.controllers.PropertyInjectedController;
-import codes.drinky.di.controllers.SetterInjectedController;
+import codes.drinky.di.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,9 @@ public class DiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(DiApplication.class, args);
+
+		I18nController i18nController = (I18nController) context.getBean("i18nController");
+		System.out.println(i18nController.sayGreeting());
 
 		System.out.println("--------- primary bean ---------");
 
