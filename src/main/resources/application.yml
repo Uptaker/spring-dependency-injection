@@ -1,0 +1,14 @@
+drinky:
+  jms:
+    username: JMS Username
+    password: somepass
+    url: SomeUrl
+
+---
+spring:
+  config:
+    activate:
+      on-profile: est
+drinky:
+  jms:
+    username: JMS Username >>> IN ESTONIAN <<<

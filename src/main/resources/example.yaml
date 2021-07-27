@@ -1,0 +1,41 @@
+# this is a comment wee
+
+name: Markus
+
+names: #comment
+  - John
+  - Karl
+  - Hannah
+  - Siim
+  - Karit
+
+pound_sign: "#"
+
+book:
+  author: Joe Raaar
+  publisher: Randommm
+
+truth: yes # boolean
+
+author_truth: True
+
+more_true: true
+
+false: no # no, false, FALSE
+
+string_val: "This is it's quote"
+
+colon_string: "my courses: one two three"
+
+ionclude_new_lines: |
+  asdasdasdasdasdasdasdasdasdas
+  dasdasdas
+  asdasdasdas
+  dasdasdaaaaaaa
+  dsadas
+  includes all of em
+
+ignore_new_lines: >
+  this is
+  just one long
+  string
