@@ -1,0 +1,28 @@
+package codes.drinky.di.services;
+
+/**
+ * Created by jt on 5/25/17.
+ */
+public class GreetingServiceFactory {
+
+    private GreetingRepository greetingRepository;
+
+    public GreetingServiceFactory(GreetingRepository greetingRepository) {
+        this.greetingRepository = greetingRepository;
+    }
+
+    public GreetingService createGreetingService(String lang) {
+
+        switch (lang){
+            case "en":
+                return new PrimaryGreetingService(greetingRepository);
+            case "de":
+                return new I18nGermanGreetingService(greetingRepository);
+            case "est":
+                return new I18EstonianGreetingService(greetingRepository);
+            default:
+                return new PrimaryGreetingService(greetingRepository);
+        }
+
+    }
+}

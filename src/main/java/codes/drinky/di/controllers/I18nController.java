@@ -13,7 +13,7 @@ public class I18nController {
     private final GreetingService greetingService;
 
     @Autowired
-    public I18nController(@Qualifier("i18nService") GreetingService greetingService) {
+    public I18nController(@Qualifier("greetingServiceImpl") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 

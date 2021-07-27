@@ -1,6 +1,8 @@
 package codes.drinky.di;
 
 import codes.drinky.di.controllers.*;
+import codes.drinky.di.examplebeans.FakeDataSource;
+import codes.drinky.di.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -17,27 +19,13 @@ public class DiApplication {
 
 		System.out.println("--------- primary bean ---------");
 
-		MyController myController = (MyController) context.getBean("myController");
 
-		System.out.println(myController.sayHello());
+		FakeDataSource fakeDataSource = (FakeDataSource) context.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUser() + " " + fakeDataSource.getUrl());
 
-		System.out.println("--------- property ---------");
-
-		PropertyInjectedController propertyInjectedController = (PropertyInjectedController)  context.getBean("propertyInjectedController");
-
-		System.out.println(propertyInjectedController.getGreeting());
-
-		System.out.println("--------- setter ---------");
-
-		SetterInjectedController setterInjectedController = (SetterInjectedController) context.getBean("setterInjectedController");
-
-		System.out.println(setterInjectedController.getGreeting());
-
-		System.out.println("--------- constructor ---------");
-
-		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) context.getBean("constructorInjectedController");
-
-		System.out.println(constructorInjectedController.getGreeting());
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) context.getBean(FakeJmsBroker.class);
+		System.out.println(fakeJmsBroker.getUser());
 	}
 
 }
+
